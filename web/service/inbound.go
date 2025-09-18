@@ -1223,8 +1223,12 @@ func (s *InboundService) DelDepletedClients(id int) (err error) {
 		whereText += "= ?"
 	}
 
+	now := time.Now()
+	thirtyDaysAgo := now.AddDate(0, 0, -30).Unix() * 1000
+	logger.Debug("sixtyDaysAgo:", thirtyDaysAgo)
+
 	depletedClients := []xray.ClientTraffic{}
-	err = db.Model(xray.ClientTraffic{}).Where(whereText+" and enable = ?", id, false).Select("inbound_id, GROUP_CONCAT(email) as email").Group("inbound_id").Find(&depletedClients).Error
+	err = db.Model(xray.ClientTraffic{}).Where(whereText+" and enable = ? and expiry_time < ?", id, false, thirtyDaysAgo).Select("inbound_id, GROUP_CONCAT(email) as email").Group("inbound_id").Find(&depletedClients).Error
 	if err != nil {
 		return err
 	}
