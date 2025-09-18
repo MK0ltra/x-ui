@@ -37,7 +37,7 @@
 ## Install & Upgrade to Latest Version
 
 ```sh
-bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/MK0ltra/x-ui/master/install.sh)
 ```
 
 ## Install Legacy Version
@@ -45,7 +45,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/master/install.s
 **Step 1:** To install an old version, use following installation command. e.g., version `1.8.0`:
 
 ```sh
-VERSION=1.8.0 && bash <(curl -Ls "https://raw.githubusercontent.com/alireza0/x-ui/$VERSION/install.sh") $VERSION
+VERSION=1.8.0 && bash <(curl -Ls "https://raw.githubusercontent.com/MK0ltra/x-ui/$VERSION/install.sh") $VERSION
 ```
 
 ## Manual Install & Upgrade
@@ -67,7 +67,7 @@ case "${ARCH}" in
   *) XUI_ARCH="amd64" ;;
 esac
 
-wget https://github.com/alireza0/x-ui/releases/latest/download/x-ui-linux-${XUI_ARCH}.tar.gz
+wget https://github.com/MK0ltra/x-ui/releases/latest/download/x-ui-linux-${XUI_ARCH}.tar.gz
 ```
 
 2. Once the compressed package is downloaded, execute the following commands to install or upgrade x-ui:
@@ -111,7 +111,7 @@ curl -fsSL https://get.docker.com | sh
 **Step 2:** Clone the Project Repository:
 
    ```sh
-   git clone https://github.com/alireza0/x-ui.git
+   git clone https://github.com/MK0ltra/x-ui.git
    cd x-ui
    ```
 
