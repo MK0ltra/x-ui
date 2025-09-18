@@ -1279,10 +1279,10 @@ func (s *InboundService) DelDepletedClients(id int) (err error) {
 		}
 	}
 
-	err = tx.Where(whereText+" and enable = ?", id, false).Delete(xray.ClientTraffic{}).Error
-	if err != nil {
-		return err
-	}
+	// err = tx.Where(whereText+" and enable = ?", id, false).Delete(xray.ClientTraffic{}).Error
+	// if err != nil {
+	// 	return err
+	// }
 
 	return nil
 }
